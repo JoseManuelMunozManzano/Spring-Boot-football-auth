@@ -17,6 +17,11 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
+							"key": "scope",
+							"value": "football:read football:admin",
+							"type": "string"
+						},
+						{
 							"key": "client_authentication",
 							"value": "body",
 							"type": "string"
@@ -29,11 +34,6 @@
 						{
 							"key": "addTokenTo",
 							"value": "header",
-							"type": "string"
-						},
-						{
-							"key": "scope",
-							"value": "football:read",
 							"type": "string"
 						},
 						{
