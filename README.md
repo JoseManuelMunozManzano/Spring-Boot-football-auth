@@ -32,7 +32,8 @@ Uso Spring Initializr: `https://start.spring.io/`
   - Si indicamos en scope solo uno, entonces mandamos solo ese scope
 - Después de obtener el token, podemos ir a la web `jwt.ms` y pegarlo ahí, y pulsar el botón `Decoded Token`
 - Ejecutar también el proyecto de Resource Server: `https://github.com/JoseManuelMunozManzano/Spring-Boot-football-resource`
-- Como se ha añadido la gestión de distintos scopes (solo lectura o admin) hay que tenerlo en cuenta   
+- Como se ha añadido la gestión de distintos scopes (solo lectura o admin) hay que tenerlo en cuenta
+- Para el proyecto `https://github.com/JoseManuelMunozManzano/footballui-openid-authentication` tenemos otra forma de crear un token. Es `AuthenticationUI`
 
 ## Configuración del Authorization Server
 
@@ -51,3 +52,13 @@ Vamos a modificar `application.yml` para creawr dos scopes, uno de solo lectura 
 ![alt Scopes](./images/03-Scopes.png)
 
 Ver también el proyecto de resource server `https://github.com/JoseManuelMunozManzano/Spring-Boot-football-resource` donde tendremos que aplicar la configuración aquí realizada.
+
+## Configurando una aplicación MVC con autenticación OpenId
+
+Para este proyecto, ver también el proyecto `https://github.com/JoseManuelMunozManzano/footballui-openid-authentication`.
+
+Reutilizamos esta aplicación Authorization Server y vamos a usar Redis para mantener sesiones de la aplicación.
+
+Redis lo estoy ejecutando en mi Raspberry Pi.
+
+Tenemos que crear el registro del cliente en este Authorization Server. Para ello modificamos `application.yml` y añadimos el nuevo registro de cliente.
