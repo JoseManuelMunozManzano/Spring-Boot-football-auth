@@ -13,6 +13,7 @@ Uso Spring Initializr: `https://start.spring.io/`
 ## Ejecución del proyecto
 
 - Clonar/descargar este proyecto
+- Renombrar `application_template.yml` por `application.yml` e indicar `client-id` y `client-secret` (OAuth2)
 - Ejecutar el proyecto con el comando: `./mvnw spring-boot:run`
     - O ejecutar directamente desde IntelliJ Idea
 - Podemos recuperar la configuración de nuestro server haciendo una petición a `http://localhost:9000/.well-known/openid-configuration`
@@ -34,6 +35,7 @@ Uso Spring Initializr: `https://start.spring.io/`
 - Ejecutar también el proyecto de Resource Server: `https://github.com/JoseManuelMunozManzano/Spring-Boot-football-resource`
 - Como se ha añadido la gestión de distintos scopes (solo lectura o admin) hay que tenerlo en cuenta
 - Para el proyecto `https://github.com/JoseManuelMunozManzano/footballui-openid-authentication` tenemos otra forma de crear un token. Es `AuthenticationUI`
+- Para el proyecto `Logging con Google Accounts` acceder a la ruta `http://localhost:9080/myself` 
 
 ## Configuración del Authorization Server
 
@@ -62,3 +64,20 @@ Reutilizamos esta aplicación Authorization Server y vamos a usar Redis para man
 Redis lo estoy ejecutando en mi Raspberry Pi.
 
 Tenemos que crear el registro del cliente en este Authorization Server. Para ello modificamos `application.yml` y añadimos el nuevo registro de cliente.
+
+## Logging con Google Accounts
+
+Vamos a hacer login en la app usando Google Accounts. En otros repositorios ya tengo como hacer esto, así que aquí no se vuelve a explicar.
+
+Para este proyecto, ver también los proyectos `https://github.com/JoseManuelMunozManzano/Spring-Boot-football-resource` y `https://github.com/JoseManuelMunozManzano/footballui-openid-authentication`. 
+
+Añadimos la siguiente dependencia al POM:
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-oauth2-client</artifactId>
+</dependency>
+```
+
+En `application.yml` añadimos la configuración de cliente para Google.

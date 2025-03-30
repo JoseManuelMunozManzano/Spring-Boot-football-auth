@@ -12,6 +12,18 @@ spring:
       name: "user"
       password: "password"
     oauth2:
+      client:
+        registration:
+          football-gmail:
+            client-id: "replace with your client id"
+            client-secret: "replace with your secret"
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authorization-grant-type: authorization_code
+            scope: openid,profile,email
+        provider:
+          football-gmail:
+            issuer-uri: https://accounts.google.com
+            user-name-attribute: given_name
       authorizationserver:
         client:
           basic-client:
